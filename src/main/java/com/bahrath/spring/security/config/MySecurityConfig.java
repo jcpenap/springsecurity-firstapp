@@ -21,7 +21,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .password(passwordEncoder.encode("cruise"))
                 .authorities("read").build();
         userDetailsService.createUser(user);
-        auth.userDetailsService(userDetailsService);
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
     }
 
     @Override
