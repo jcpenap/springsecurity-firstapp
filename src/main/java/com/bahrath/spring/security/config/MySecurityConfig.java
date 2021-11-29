@@ -26,7 +26,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin();
         http.authorizeRequests().antMatchers("/hello").authenticated()
-                .anyRequest().denyAll();
+                .anyRequest().permitAll();
     }
 
 }
